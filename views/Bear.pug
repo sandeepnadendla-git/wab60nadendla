@@ -28,7 +28,16 @@ block content
                         "Age": 17
                     },
                 ]
-            each item in Bear
-                div(class="col-sm-2") #{item.Color}
-                div(class="col-sm-2") #{item.Bread}
-                div(class="col-sm-2") #{item.Age}
+            each item,index in Bear
+                div(class="col-sm-2" onClick="buy("+ index +")") #{item.Color}
+                div(class="col-sm-2" onClick="buy("+ index +")") #{item.Bread}
+                div(class="col-sm-2" onClick="buy("+ index +")") #{item.Age} 
+    script.     
+        function buy(itemNo)
+        {
+            alert(`You purchased item ${itemNo+1}`)
+        } 
+
+
+
+
